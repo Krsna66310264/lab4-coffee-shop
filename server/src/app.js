@@ -7,12 +7,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //home 
-app.get('/', (req, res) => {
+app.get('/CoffeeShop', (req, res) => {
     res.send('Welcome to our coffee shop!');
 });
 
 //menu 
-app.get('/menu', (req, res) => {
+app.get('/CoffeeShop/menu', (req, res) => {
     res.send('Espresso Americano Latte Cappuccino Mocha');
 });
 
