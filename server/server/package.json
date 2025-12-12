@@ -1,0 +1,16 @@
+{
+  "name": "lab4-coffee-shop-webblog-server",
+  "version": "1.0.0",
+  "description": "nodejs vuejs webblog server (back end)",
+  "license": "ISC",
+  "author": "Kitsana Hwanphon",
+  "type": "commonjs",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "express": "^5.2.1"
+  }
+}
