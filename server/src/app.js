@@ -1,14 +1,18 @@
-let express = require('express');
-let bodyParser = require('body-parser');
+const express = require('express')
+const cors = require('cors')
+const { sequelize } = require('./models')
+const config = require('./config/config')
 
-const app = express();
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// Import routes
+require('./routes')(app);
 
-require('./routes')(app)
-
-const PORT = 8081;
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
+sequelize.sync({ force: false }).then(() => {
+    app.listen(config.port, () => {
+        console.log('Server running on port ' + config.port)
+    })
+})
